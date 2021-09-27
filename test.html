@@ -1,0 +1,750 @@
+{% extends "base.jinja" %}
+{% block extracss %}
+
+<style type="text/css">
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); background-position: center; background-size: contain; height: 100vh;}
+
+.container-dashboard {margin-left: 70px; width: 95.75%;}
+.flip-heading {padding: 20px 0px 15px 25px;}
+.flip-heading h2 {color: #fff;}
+.flip-heading p {color: #fff; margin-bottom: 0px;}
+
+.flip-carousel .carousel-inner {border: 2px solid #ebedf7; background: #fff;}
+.flip-carousel .carousel a i {color: #333; width: 55px; height: 55px; line-height: 55px; border-radius: 50%; box-shadow: 0 0 15px 0 rgba(79, 102, 187, 0.3); border: solid 1px #b2bce1; background-color: #ebedf7;}
+
+/*---------- Flip card start -----------*/
+.flip-card {background-color: transparent; width: 100%; height: auto; perspective: 1000px;}
+.flip-card-inner {position: relative; width: 720px; height: 56vh; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25); background: #fff; border-radius: 15px; margin: 50px 0px;}
+.flip-card-front, .flip-card-back {position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;}
+.flip-card-front h2 {margin-top: 22vh;}
+.flip-card-front .btn01 {width: 160px; height: 29px; border-radius: 6px; background-color: #ffffff; outline: none !important; border: 1px solid #afd3e4; margin-top: 5px; cursor: pointer; transition: all 0.2s ease-in-out;}
+.flip-card-front .btn01:hover {background: #304183; color: #fff; border-color: #304183; box-shadow: 2px 2px 2px #333;}
+.flip-card-back {transform: rotateX(180deg);}
+.flip-card-back .not_quite, .got_it {width: 137px; height: 31px; border-radius: 7px; background-color: #e56c5b; border: none; color: #fff; margin: 0px 5px; transition: all 0.2s ease-in-out; outline: none !important; cursor: pointer;}
+.flip-card-back .not_quite {background-color: #e56c5b;}
+.flip-card-back .not_quite:hover {background: #d86354; box-shadow: 2px 2px 4px 0px #333;}
+.flip-card-back .got_it {background-color: #02a569;}
+.flip-card-back .got_it:hover {background: #2b8e58; box-shadow: 2px 2px 4px 0px #333;}
+
+/*---------- Flip card01 start -----------*/
+.flip-card01{background-color: transparent; width: 100%; height: auto; perspective: 1000px;}
+.flip-card-inner01 {position: relative; width: 100%; height: 56vh; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card-front01, .flip-card-back01 {position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;}
+.flip-card-back01 {transform: rotateX(180deg);}
+
+.flip-card01 .box01, .box02 {position: absolute; top: 0px; width: 700px; height: 53vh; visibility: hidden; margin: 10px;}
+.flip-card01 .box01 {background: rgba(229, 108, 91, 0.1);}
+.flip-card01 .box01 h4 {padding-top: 23vh;}
+.flip-card01 .box01 button {color: #e56c5b;}
+.flip-card01 .box02 {background: rgba(2, 165, 105, 0.1);}
+.flip-card01 .box02 h4 {padding-top: 23vh;}
+.flip-card01 .box02 button {color: #02a569;}
+.flip-card01 .read_again{text-align: center; margin-top: 18vh; border: none; outline: none !important; background: transparent; cursor: pointer;}
+
+.flip-card01 .custom-scrollbar-css {text-align: left; height: 43vh; margin: 20px; overflow-y: scroll;}
+.flip-card01 .custom-scrollbar-cssh 4 {margin-bottom: 15px;}
+.flip-card01 .custom-scrollbar-css h5 {font-weight: bold; font-size: 1rem; margin-bottom: 5px;}
+.flip-card01 .custom-scrollbar-css::-webkit-scrollbar {width: 5px;}
+.flip-card01 .custom-scrollbar-css::-webkit-scrollbar-track {background: #eee;}
+.flip-card01 .custom-scrollbar-css::-webkit-scrollbar-thumb {border-radius: 1rem; background-color: #00d2ff; background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);}
+
+.left85 {left: 85px !important; transition: all 0.2s ease-in;}
+.left5 {left: -5px !important; transition: all 0.2s ease-in;}
+.half-circle, .site-sidebar {transition: all 0.2s ease-in;}
+
+/*------- Responsive ---------*/
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+.heading-top {margin-top: 0px !important;}
+.container-dashboard {margin-left: 11%; width: 89%; padding: 0px;}
+.flip-card-inner {width: 540px; height: 325px;}
+.flip-card-front h2 {margin-top: 120px;}
+.flip-carousel .carousel-control-prev {left: -2%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {right: -2%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner01 {height: 325px;}
+.flip-card01 .box01 h4 {padding-top: 140px}
+.flip-card01 .box02 h4 {padding-top: 140px}
+.flip-card01 .read_again {margin-top: 100px;}
+.flip-card01 .box01, .box02 {width: 96.5%; height: 305px;}
+.flip-card01 .custom-scrollbar-css {height: 250px; margin: 20px 20px 15px 20px;}
+
+}
+
+@media only screen and (min-width: 681px) and (max-width: 767px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 20px;}
+.flip-heading h2 {font-size: 26px;}
+.flip-heading p {font-size: 14px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 37%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 37%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 24px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 135px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 345px; margin: 20px 15px 10px 20px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 370px; margin: 25px 4%;} 
+.flip-card01 .box01 h4 {padding-top: 185px;}
+.flip-card01 .box02 h4 {padding-top: 185px;}
+.flip-card01 .read_again {margin-top: 125px;}
+
+}
+
+@media only screen and (min-width: 581px) and (max-width: 680px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 20px;}
+.flip-heading h2 {font-size: 24px;}
+.flip-heading p {font-size: 13px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 36%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 36%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 22px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 140px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 345px; margin: 20px 15px 10px 20px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 380px; margin: 20px 4%;} 
+.flip-card01 .box01 h4 {padding-top: 185px;}
+.flip-card01 .box02 h4 {padding-top: 185px;}
+.flip-card01 .read_again {margin-top: 125px;}
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 580px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 20px;}
+.flip-heading h2 {font-size: 22px;}
+.flip-heading p {font-size: 13px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 36%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 36%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 22px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 140px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 350px; margin: 15px 15px 10px 15px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 380px; margin: 20px 4%;} 
+.flip-card01 .box01 h4 {padding-top: 190px;}
+.flip-card01 .box02 h4 {padding-top: 190px;}
+.flip-card01 .read_again {margin-top: 130px;}
+
+
+}
+
+@media only screen and (min-width: 361px) and (max-width: 480px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 20px;}
+.flip-heading h2 {font-size: 20px;}
+.flip-heading p {font-size: 13px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 34%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 34%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 22px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 140px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 350px; margin: 15px 15px 10px 15px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 390px; margin: 15px 4%;} 
+.flip-card01 .box01 h4 {padding-top: 190px;}
+.flip-card01 .box02 h4 {padding-top: 190px;}
+.flip-card01 .read_again {margin-top: 130px;}
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 360px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 15px;}
+.flip-heading h2 {font-size: 18px;}
+.flip-heading p {font-size: 12px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 32%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 32%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 20px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 140px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 350px; margin: 15px 15px 10px 15px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 390px; margin: 15px 4%;} 
+.flip-card01 .box01 h4 {padding-top: 190px;}
+.flip-card01 .box02 h4 {padding-top: 190px;}
+.flip-card01 .read_again {margin-top: 130px;}
+
+}
+
+@media only screen and (max-width: 320px) {
+#wrapper {background: #293873 url(https://cdn.entrance360.com/static/images/ai_bg_light.jpg); height: auto;}
+
+.heading-top {margin-top: 0px !important;}
+.site-sidebar {left: -85px;}
+.half-circle {left: 0px;}
+
+.container-dashboard {margin-left: 0px; width: 100%; padding: 0px;}
+.flip-heading {padding: 15px 15px 0px 15px;}
+.flip-heading h2 {font-size: 18px;}
+.flip-heading p {font-size: 12px;}
+
+.flip-carousel .carousel {height: 500px;}
+.flip-carousel .carousel-inner {border: none; height: 440px; background: none;}
+.flip-carousel .carousel-control-prev {top: 87%; left: 32%; visibility: visible !important;}
+.flip-carousel .carousel-control-next  {top: 87%; right: 32%;}
+.flip-carousel .carousel a i {color: #333; width: 40px; height: 40px; line-height: 40px;}
+
+.flip-card-inner {width: 92%; height: 420px; margin: 15px 4%;}
+.flip-card-front h2 {margin-top: 200px; font-size: 20px;}
+.flip-card-front .btn01 {width: 90%; margin-top: 140px;}
+
+.flip-card-inner01 {width: 100%;}
+.flip-card-front01 p {font-size: 13px;}
+.flip-card01 .custom-scrollbar-css {height: 350px; margin: 15px 15px 10px 15px;}
+.flip-card-back .not_quite, .got_it {width: 40%;}
+.flip-card01 .box01, .box02 {width: 92%; height: 390px; margin: 15px 4%;}
+.flip-card01 .box01 h4 {padding-top: 190px;}
+.flip-card01 .box02 h4 {padding-top: 190px;}
+.flip-card01 .read_again {margin-top: 130px;}
+
+}
+
+</style>
+{% endblock %}
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+<div id="wrapper">
+    {% include 'common/header.jinja' %}
+    {% include 'dashboard/partials/sidebar.jinja' %}
+    <div class="heading-top"  style="margin-top: 70px;">
+    </div>
+    <div class="container-fluid container-dashboard">
+        {% for chapter in chapters %}
+        <div class="flip-heading">
+            <h2>Physical quantities and units</h2>
+            <p>1/4 Cards</p>
+        </div>
+        {% endfor %}
+    	{# <ul>
+    		{% for concept in concepts %}
+    		<li>{{concept.title}}</li>
+    		{% endfor %}
+    	</ul> #}
+        <div class="flip-carousel">
+            <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center" data-interval='false'>
+                <!-- slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>Physical quantity</h2> 
+                                    <button class="btn01">Read Now</button>
+                                </div>
+                                <div class="flip-card-back">
+                                    <div class="flip-card01">
+                                        <div class="flip-card-inner01">
+                                            <div class="flip-card-front01">
+                                                <div class="custom-scrollbar-css">
+                                                    <h4>Physical quantity</h4>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                </div>
+                                                <div class="btns">
+                                                    <button class="not_quite">Not quite</button>
+                                                    <button class="got_it">Got it</button>
+                                                </div>
+                                            </div>
+                                            <div class="flip-card-back01">
+                                                <div class="box01">
+                                                    <h4>Physical quantity</h4>
+                                                    <button class="read_again">Read Again</button>
+                                                </div>
+                                                <div class="box02">
+                                                    <h4>Physical quantity</h4>
+                                                    <button class="read_again">Read Again</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="carousel-item">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>Physical quantity 2</h2> 
+                                    <button class="btn01">Read Now</button>
+                                </div>
+                                <div class="flip-card-back">
+                                    <div class="flip-card01">
+                                        <div class="flip-card-inner01">
+                                            <div class="flip-card-front01">
+                                                <div class="custom-scrollbar-css">
+                                                    <h4>Physical quantity</h4>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                    <h5>What is Lorem Ipsum?</h5>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                </div>
+                                                <div class="btns">
+                                                    <button class="not_quite">Not quite</button>
+                                                    <button class="got_it">Got it</button>
+                                                </div>
+                                            </div>
+                                            <div class="flip-card-back01">
+                                                <div class="box01">
+                                                    <h4>Physical quantity</h4>
+                                                    <button class="read_again">Read Again</button>
+                                                </div>
+                                                <div class="box02">
+                                                    <h4>Physical quantity</h4>
+                                                    <button class="read_again">Read Again</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <!-- Left right --> 
+                <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"><i class="fas fa-arrow-left"></i></a> 
+                <a class="carousel-control-next" href="#custCarousel" data-slide="next"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <!-- ****** -->     
+    </div>
+</div>
+
+{% endblock %}
+{% block extrascripts %}
+<script>
+$(document).ready(function() {
+    // Toggle for sidebar
+    $(".half-circle").click(function(){
+        $(this).toggleClass('left85');
+        $(".site-sidebar").toggleClass('left5');
+    });
+
+    // Page load prev arrow hidden
+    $(".carousel-control-prev").css("visibility","hidden");  
+    $(".carousel-control-next").click(function(){
+        $(".carousel-control-prev").css("visibility","visible");
+    });
+
+    // Onclick start flip
+    $(".flip-card .btn01").click(function() {
+        $(".flip-card-inner").css("transform","rotateX(180deg)");
+    });
+
+    $(".got_it").click(function() {
+        $(".flip-card-front01").css("visibility","hidden");  //add
+        $(".flip-card-inner01").css("transform","rotateX(180deg)");
+        $(".box01").css("visibility","hidden");
+        $(".box02").css("visibility","visible");
+    });
+
+    $(".read_again").click(function() {
+        $(".flip-card-front01").css("visibility","visible");
+        $(".flip-card-inner01").css("transform","rotateX(0deg)");
+        
+    });
+
+    $(".not_quite").click(function() {
+        $(".flip-card-front01").css("visibility","hidden"); //add
+        $(".flip-card-inner01").css("transform","rotateX(180deg)");
+        $(".box02").css("visibility","hidden");
+        $(".box01").css("visibility","visible");
+    });
+
+    // Reset carousel item on arrow button
+    $(".carousel-control-prev").click(function(){
+        $(".flip-card-inner").css("transform","rotateX(0deg)");
+        $(".flip-card-inner01").css("transform","rotateX(0deg)");
+        $(".flip-card-front01").css("visibility","visible");
+    });
+
+    $(".carousel-control-next").click(function(){
+        $(".flip-card-inner").css("transform","rotateX(0deg)");
+        $(".flip-card-inner01").css("transform","rotateX(0deg)");
+        $(".flip-card-front01").css("visibility","visible");
+    });
+});
+</script>
+{% include 'common/analytics.jinja' %}
+{% endblock %}
+
+
+
+
+{% extends "base.jinja" %}
+{% block extracss %}
+{% endblock %}
+{% block content %}
+
+    {% include 'common/header_cached.jinja' %}
+<div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="position: relative;">
+        <ol class="carousel-indicators" style="z-index: 1;     margin-bottom: 2rem;     bottom: 0px;">
+            {% for banner in banners %}
+                <li data-target="#myCarousel" data-slide-to="{{ loop.index - 1}}" {% if loop.first %}class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
+
+        <div class="carousel-inner carousel-inner-mobile">
+            {% for banner in banners %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    
+
+                    {% if not banner.banner_image and not banner.cta_text %}
+                        {{ banner.banner_text|safe }}
+                    {% elif banner.banner_image and not banner.cta_text %}
+                        <img class="first-slide" src="{{ banner.banner_image.url }}" alt="" class="img-fluid">
+                    {% endif %}
+
+                    {% if banner.banner_text and not banner.cta_text and banner.banner_image  %}
+                    <div class="container">
+                        <div class="carousel-caption carousel-text text-left">
+                            {{ banner.banner_text|safe }}
+                            {% if banner.cta_link and banner.cta_text %}
+                                <p><a class="btn btn-lg banner-btn-outline" href="{{ banner.cta_link }}" role="button" onclick="ga('send', 'event', '{{ banner.banner_title|safe|striptags }}', '{{ banner.cta_text }} button click', 'Home Page')">{{ banner.cta_text }}</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                        
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="courses-data-bg">
+        <div class="tabs-data">
+            <div class="container">
+                <div class="row p-3 mobile-p3">
+                     {% for stream in streams %}
+                     <div class="product-stream col-4 col-md-4 {{ stream.slug }}" id="{{ stream.slug }}">
+                         <a href="#courses" style="color: #000; padding: 10px 0px; display: block;">
+                            <div><img src="{{ static(stream.image_path|safe) }}" alt="{{ stream.name }}"></div>
+                            {{ stream.name }}
+                        </a>
+                     </div>
+                     {% endfor %}
+                </div>
+                <div  id="courses"  class="row p-3 mobile-p3">
+                    <div class=" col-12 col-md-12 top-courses-box-heading">All Courses</div>
+                    {% for product_name, product_data in products.items() %}
+                        <div class=" col-6 col-md-3 no-padding-both" data-stream="{{ product_data['stream'] }}">
+                            <div class="top-courses-box">
+                                <a href="/{{ product_data['stream'] }}/{{ product_data['slug'] }}">
+                                    {% if product_data['logo'] %}<img src="{{ product_data['logo'].url }}" alt="{{ product_data['slug'] }}">{% endif %}
+                                    <b>{{ product_name }}</b>
+                                    <span>{{ product_data['count'] }} Cours{{ product_data['count']|pluralize("e,es") }}</span>
+                                 </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="home-qna-bg">
+        <div class="container">
+            <div>
+                <h3 class="home-qna-headong float-left">Most Asked Questions</h3>
+                <span class="float-right"><a href="/all-questions" style="color: #1f2e67; font-size: 14px;">View all</a></span>
+                <div class="clearfix"></div>
+            </div>
+            {% for question in questions %}
+                <div class="qna-listing-box">
+                    <div class="qna-top-topic"><span class="tag"><a href="/{{ question.stream.slug }}/questions">{{ question.stream.name }}</a></span>
+                        <div class="qns-comment-view" style="float:right">
+                                <span>{{ question.view_count }} Views</span>
+                        </div>
+                    </div>
+                    <div class="qna-title">
+                        <a href="/{{ question.stream.slug }}/question-{{ question.slug }}">
+                            {{ question.title }}
+                        </a>
+                    </div>
+                    <div class="qna-description">
+                        {{ question.description|truncatechars_html(100)|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+        
+    <div class="enquiry-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="enquiry-box">
+                        <div class="enquiry-top">
+                            <div class="float-left enquiry-heading">Targeting JEE Main April 2021?</div>
+                            <div class="clearfix"></div>
+                        </div>
+                            {% raw %}
+                            {% if request.user.is_authenticated  %}
+                                <div class="enquiry-form-box">
+                                    {% if form.errors %}
+                                        {% for error in form.non_field_errors %}
+                                            <div class="alert alert-danger">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                <strong style="color:red;">{{ error|escape }}</strong>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                        <div class="form-group enquiry-form-box-list">
+                                        <input type="text" name="name" required="" class="form-control enquiry-name" maxlength="255" data-validation="custom"
+                                        data-validation-regexp="^[A-Za-z .']{3,40}$"
+                                            data-validation-error-msg="User name has to be alphanumeric value (3-40 chars)" value="{% if form.name.value %}{{ form.name.value }}{% endif %}">
+                                        {% for error in form.name.errors %}
+                                            <span class="text-danger enquiry-name-error">{{ form.name.label }} - {{ error|escape }}</span>
+                                        {% endfor %}
+                                            <span class="text-danger enquiry-name-error"></span>
+                                        </div>
+                                        <div class="form-group enquiry-form-box-list">
+                                        <input type="text" name="email" class="form-control enquiry-email" data-validation="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" data-validation-error-msg="Please enter a valid email address" autocomplete="false">
+                                        {% for error in form.email.errors %}
+                                            <span class="text-danger">{{ form.email.label }} - {{ error|escape }}</span>
+                                        {% endfor %}
+                                        </div>
+                                        <div class="form-group clear-both enquiry-form-box-list">
+                                            <input type="text" name="phone_number" class="form-control enquiry-phone" minlength="10" maxlength="10" data-validation="custom" data-validation-regexp="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" data-validation-error-msg="Enter Correct Phone Number" value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"  autocomplete="false" value="" readonly onfocus="this.removeAttribute('readonly');" style="background-color: white;">
+                                        {% for error in form.phone_number.errors %}
+                                            <span class="text-danger enquiry-phone-error">{{ form.phone_number.label }} - {{ error|escape }}</span>
+                                        {% endfor %}
+                                            <span class="text-danger enquiry-phone-error"></span>
+                                        </div>
+
+                                        <div class="m-t-lg clear-both">
+                                        <ul class="list-inline">
+                                                <li style="text-align: center; display: block;">
+                                                    <a id="sticky-btn" class="btn lets-go-btn" href="{% url 'landing.knockout' 'jee-main-january' %}" onclick="ga('send', 'event', 'jee achievers registration', 'button click', 'JEE scholarship form');">Check Courses</a>
+                                                </li>
+                                        </ul>
+                                      <div class="clearfix"></div>
+                                        </div>
+
+                                </div>
+                            {% else %}
+                                <form class="enquiry-form-box" action="/knockout-jee-main-january/" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group enquiry-form-box-list">
+                                        <input type="text" class="form-control enquiry-name" name="name"  placeholder="Full Name" data-validation="custom"
+                                        data-validation-regexp="^[A-Za-z .']{3,40}$"
+                                            data-validation-error-msg="Name has to be alphanumeric value (3-40 chars)">
+                                        <span class="text-danger enquiry-name-error"></span>
+                                    </div>
+                                    <div class="form-group enquiry-form-box-list">
+                                        <input type="email" class="form-control enquiry-email" name="email" aria-describedby="emailHelp" placeholder="Your Email Address" data-validation="email" data-validation-error-msg="Please enter a valid email address" autocomplete="false">
+                                    </div>
+                                    <div class="form-row enquiry-form-box-list">
+                                        <div class="col">
+                                            <input type="text" name="phone_number enquiry-phone" class="form-control" placeholder="Mobile No." minlength="10" maxlength="10" data-validation="custom" data-validation-regexp="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" data-validation-error-msg="Enter Correct Phone Number">
+                                            <span class="text-danger enquiry-phone-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center"><button type="submit" class="btn lets-go-btn">Check Course</button></div>
+                                </form>
+                            {% endif %}
+                        {% endraw %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-right mobile-no" style="padding-right: 0px">
+                    <img src="{{ static('images/home/mobile-bg.png') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+    {% include 'common/footer.jinja' %}
+    {% include 'mainsite/morph-search.jinja' %}
+
+    <!-- Modal -->
+    <div class="modal fade" id="tvadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-home" role="document">
+            <div class="modal-content">
+                <div class="modal-body modal-body-home">
+                    <button type="button" class="close close-home" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>        
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src='https://www.youtube.com/embed/XzNUZTDf0Xc?rel=0' width="380" height="190" frameborder="2" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+ {% endblock %}
+ {% block exit_intent %}
+    {% endblock %}
+
+    {% block extrascripts %}
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $("#tvadModal").on('hidden.bs.modal', function (){
+                $("#tvadModal iframe").attr("src", $("#tvadModal iframe").attr("src"));
+            });
+
+            $(".menu-item > a ").click(function(){
+                $(this).parent().children(".ec-sab-menu").slideToggle("slow");
+                $(this).find("i").toggleClass('fa-angle-down');
+            });
+
+            $(".btn-pro-view-all").click(function(){
+                $(this).parents('.exam-home-box').find(".all-courses-box").slideToggle("slow");
+                $(this).find(".fas").toggleClass('fa-angle-up fa-angle-down');
+            });
+
+            $('.engineering').click(function(event) {
+                event.preventDefault();
+                var engineering = $("div").find(`[data-stream='engineering']`);
+                var medical = $("div").find(`[data-stream='medical']`);
+                var jobs = $("div").find(`[data-stream='jobs']`);
+                medical.hide();
+                jobs.hide();
+                engineering.show();
+                $('.top-courses-box-heading').text('Engineering');
+                $('.top-courses-box b').css('color', '#5e9e81');
+                $('html, body').animate({
+                    scrollTop: 465
+                });
+            });
+            $('#medical').click(function(event) {
+                event.preventDefault();
+                var engineering = $("div").find(`[data-stream='engineering']`);
+                var medical = $("div").find(`[data-stream='medical']`);
+                var jobs = $("div").find(`[data-stream='jobs']`);
+                engineering.hide();
+                jobs.hide();
+                medical.show();
+                $('.top-courses-box-heading').text('Medical');
+                $('.top-courses-box b').css('color', '#b13b36');
+                $('html, body').animate({
+                    scrollTop: 465
+                });
+            });
+            $('#jobs').click(function(event) {
+                event.preventDefault();
+                var engineering = $("div").find(`[data-stream='engineering']`);
+                var medical = $("div").find(`[data-stream='medical']`);
+                var jobs = $("div").find(`[data-stream='jobs']`);
+                medical.hide();
+                engineering.hide();
+                jobs.show();
+                $('.top-courses-box-heading').text('Jobs');
+                $('.top-courses-box b').css('color', '#1c559e');
+                $('html, body').animate({
+                    scrollTop: 465
+                });
+            });
+
+            $.validate();
+            $('.enquiry-form-box').validate({
+                form: '.enquiry-form-box'
+            });
+        });
+
+
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

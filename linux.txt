@@ -1,0 +1,86 @@
+important
+_____________________________________________________________________________________________
+gzip ec_dump1.sql
+ls -lh
+rm -rf ec_dump.sql
+sudo mysqldump -u root -p entrance360 > ec_dump1.sql
+sudo mysql -u root -p entrance360 < ec_dump1.sql
+ssh -i access.pem ubuntu@ip_address
+git pull origin branch_name
+sudo supervisorctl restart all
+touch test.txt
+ssh -L 3307:stagingdb.entrance360.com:3306 ubuntu@13.126.189.12 -i learn360_staging.pem
+fab staging4 deploy:n,n,n,branch=flashcard
+fab staging2 deploy:y,n,n,branch=react_integration
+ALTER TABLE users_userprofile CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+https://jordifierro.com/django-clean-architecture
+Coupon.objects.create(name="MHT100", user_id=1, discount=1.0, counter=1000, status=1, coupon_type=1, valid_from=datetime.date(2021, 4, 27))
+https://github.com/gto76/python-cheatsheet#command-line-arguments
+mysql.server start (django.db.utils.OperationalError: (2002, "Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)"))
+https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html
+https://daisyui.com/ Tailwind CSS Components
+https://github.com/airbnb/javascript
+
+chmod
+_____________________________________________________________________________________________
+-rwxrwxrwx
+- repressents file
+d represents directory
+first 3 charecters represents permission for owner
+second 3 charecters represents permission for group
+third 3 charecters represents permission for others
+
+We can give permissions in three digits also like 765
+1st digit represents permission for owner
+2nd digit represents permissions for group
+3rd digit represents permissions for others
+
+0: No permission
+1: Execute permission
+2: Write permission
+3: Write and execute permissions
+4: Read permission
+5: Read and execute permissions
+6: Read and write permissions
+7: Read, write and execute permissions
+
+chmod 765 example.txt
+
+
+chown
+_____________________________________________________________________________________________
+
+
+Bugs
+_________________________________________________________________________________________________________________________________________________________
+
+https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/
+sudo atp-get install python3.9-dev
+sudo apt-get install python3.9-dev
+sudo apt-get install virtualenv
+sudo apt-get install libmysqlclient-dev
+virtualenv -p python3.9 env
+sudo apt-get install python3.9-distutils
+cd env
+source bin/activate
+
+sudo apt-get install libmysqlclient-dev
+virtualenv -p python3.9 env
+sudo apt-get install python3.9-distutils
+cd env
+source bin/activate
+ls
+cd ../learn360
+git checkout -- requirements.txt
+mysql -u root -p
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin@4321';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
+
+my_api_key: 85f5c5094188cddab08141105b45fd9457a8213b3ecbe231
+
+prod_api_key: 86a7920611de9f81b7d047100516f49605ae763b39cde660
+
+<img src={require('@/images/default_web.png')} alt="demo.jpg" className="img-fluid liveclasse-img-web" />
+
+test_url = settings.BASE_URL+'classroom/%s/testprep/pre-test/?test_type=5&exam_grouping_id=%d&num_questions=%s&language=1' %(sellable_product_group.slug, obj.id, obj.num_questions)

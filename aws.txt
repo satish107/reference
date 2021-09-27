@@ -1,0 +1,23 @@
+Deployment
+_____________________________________________________________________________________________
+
+launch instance
+login into server using pem file(read only 400)
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install python3-pip
+pip3 install virtualenv
+virtualenv --version
+virtualenv --python=python3 env
+source env/bin/activate
+git clone https://github.com/satish107/shopkeeper.git (create project inside shopkeeper directory)
+pip3 install gunicorn (not apt-get install gunicorn)
+check gunicorn by connecting gunicorn --bind 0.0.0.0:8000 shopkeeper.wsgi:applcation
+User Supervisor to run gunicorn always
+sudo apt-get install supervisor
+cd /etc/supervisor/conf.d/
+create supervisor_gunicorn.conf file with neccessary configuration
+sudo touch supervisor_gunicorn.conf
+sudo apt-get install -y nginx
+change security group and add inbound rule http anywhere and tcp at 8000 port nginx home page shown
+

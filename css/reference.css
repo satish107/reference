@@ -1,0 +1,31 @@
+/*Properties and its values*/
+
+/*Backgrounds*/
+body {
+  background-color: #ffffff;
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat; /* repeat-x repeat-y */
+  background-position: right top;
+  background-attachment: fixed; /* scroll */
+  background: #ffffff url("img_tree.png") no-repeat right top; /* shorthand */
+}
+
+/*Borders*/
+p {
+	border-style: dotted; /* dashed, solid, double, groove, ridge, inset, outset, none, hidden, dotted dashed solid double(mix) */
+	border-width: 5px; /* medium, thick */
+	border-width: 25px 10px 4px 35px; /* top right bottom left */
+	border-color: blue;
+	border-color: red green blue yellow; /* top right bottom left */
+	border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    border-left: 6px solid red; /* shorthand */
+
+}
+
+div {
+	color: red;
+	text-align: 
+}
