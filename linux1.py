@@ -1,9 +1,11 @@
 Important
 ----------------------------------------------------------------
 whatis (Description of command)
+whatis
 man # Manual of Command Like man grep
 pwd
 cd
+who
 #-i is used for case insesitive
 whoami
 hostname
@@ -53,7 +55,7 @@ r = 4
 w = 2
 x = 1
 # For rwx we user 4+2+1 that is 7 similarly use it for group and others
-chown and chgrp # change ownership or change of the file or folder
+chown and chgrp # change ownership or group of the file or folder
 chown root test.sh
 chgrp root test.sh
 groups satish # Group whome you belong
@@ -86,8 +88,11 @@ uname -r #karnel release
 uname -p # Information set for processor
 
 
-
-
+6. Find
+----------------------------------------------------------------
+sudo find / -type f -name "proxychains.conf"
+sudo find / -type d -name "satish"
+sudo find / -type d -iname "satish"
 
 
 

@@ -1,0 +1,11 @@
+1. Commit
+--------------------------------------------------------
+git add/rm <file>
+git resotre <file>
+git restore --staged <file>
+git add -p index.html (Add different patch of change in a single file)
+git commit (Open Editor and First Line is Subject, after enter blank line body of commit starts)
+
+1. Branching Startegy
+--------------------------------------------------------
+

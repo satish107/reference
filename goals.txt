@@ -1,0 +1,14 @@
+*Python
+*Django
+*RestApi
+*DSA
+*Javascript
+*Mysql
+
+Jquery
+React
+Html
+Css
+Git
+linux
+
