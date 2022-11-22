@@ -14,12 +14,16 @@ fab staging4 deploy:n,n,n,branch=flashcard
 fab staging2 deploy:y,n,n,branch=react_integration
 ALTER TABLE users_userprofile CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 https://jordifierro.com/django-clean-architecture
-Coupon.objects.create(name="MHT100", user_id=1, discount=1.0, counter=1000, status=1, coupon_type=1, valid_from=datetime.date(2021, 4, 27))
+Coupon.objects.create(name="TPAYU40", user_id=1, discount=1.0, counter=1000, status=1, coupon_type=1, valid_from=datetime.date(2021, 12, 15), valid_till=datetime.date(2021, 12, 18))
 https://github.com/gto76/python-cheatsheet#command-line-arguments
 mysql.server start (django.db.utils.OperationalError: (2002, "Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)"))
 https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html
 https://daisyui.com/ Tailwind CSS Components
 https://github.com/airbnb/javascript
+
+./manage.py runserver
+prospector
+fab prod deploy:n,n,n
 
 chmod
 _____________________________________________________________________________________________
@@ -55,7 +59,7 @@ Bugs
 _________________________________________________________________________________________________________________________________________________________
 
 https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/
-sudo atp-get install python3.9-dev
+sudo apt-get install python3.9-dev
 sudo apt-get install python3.9-dev
 sudo apt-get install virtualenv
 sudo apt-get install libmysqlclient-dev
@@ -76,6 +80,12 @@ mysql -u root -p
 CREATE USER 'admin'@'%' IDENTIFIED BY 'admin@4321';
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
+
+ps aux|grep gunicorn
+netstat -tulpn
+
+pip install -U supervisor
+pip freeze|grep supervisor
 
 my_api_key: 85f5c5094188cddab08141105b45fd9457a8213b3ecbe231
 
@@ -111,3 +121,5 @@ describe users_userprofile;
 alter table users_userprofile add column coaching_interested tinyint(1) DEFAULT NULL
 python manage.py migrate users 0019 --fake
 python manage.py migrate
+
+

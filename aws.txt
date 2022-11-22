@@ -1,5 +1,9 @@
 Deployment
+https://realpython.com/django-nginx-gunicorn/
 _____________________________________________________________________________________________
+
+gmail for aws => shopping17322@gmail.com
+password => satish@9387
 
 launch instance
 login into server using pem file(read only 400)
@@ -13,7 +17,7 @@ source env/bin/activate
 git clone https://github.com/satish107/shopkeeper.git (create project inside shopkeeper directory)
 pip3 install gunicorn (not apt-get install gunicorn)
 check gunicorn by connecting gunicorn --bind 0.0.0.0:8000 shopkeeper.wsgi:applcation
-User Supervisor to run gunicorn always
+Use Supervisor to run gunicorn always
 sudo apt-get install supervisor
 cd /etc/supervisor/conf.d/
 create supervisor_gunicorn.conf file with neccessary configuration

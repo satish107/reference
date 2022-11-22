@@ -1,3 +1,6 @@
+https://www.youtube.com/watch?v=Uszj_k0DGsg
+git reset --hard origin/master
+
 1. Commit
 --------------------------------------------------------
 git add/rm <file>
@@ -6,6 +9,12 @@ git restore --staged <file>
 git add -p index.html (Add different patch of change in a single file)
 git commit (Open Editor and First Line is Subject, after enter blank line body of commit starts)
 
-1. Branching Startegy
+2. Branching Startegy
 --------------------------------------------------------
+
+
+2. Merge Conflicts
+--------------------------------------------------------
+git merge feature_branch master
+git merge --abort or git rebase --abort
 

@@ -1,7 +1,7 @@
 *Python
+*DSA
 *Django
 *RestApi
-*DSA
 *Javascript
 *Mysql
 
