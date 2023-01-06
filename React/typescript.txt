@@ -1,0 +1,60 @@
+let name: string = "typescript";
+let age: number = 10;
+let any: any_type = "kjfgg123";
+let test: unknown = 1;
+let test: never = true;
+let test: undefined = undefined;
+let test: null = null;
+const names: string[] = [];
+const nemes: readonly string[] = [];
+let ourTuple: [number, boolean, string];
+ourTuple = [5, false, 'Coding God was here'];
+const ourReadonlyTuple: readonly [number, boolean, string] = [5, true, 'The Real Coding God'];
+const graph: [x: number, y: number] = [1, 2]
+const graph: [number, number] = [1, 2]
+const [x, y] = graph;
+const car: {type: string, model: string, year: number} = {type: "Toyota", model: "Corolla", year: 2000}
+const car: {type: string, mileage?: number} = {type: 'Toyota'};
+car.mileage = 10;
+const nameAgeMap: { [index: string]: number } = {};
+nameAgeMap.jack = 25;
+nameAgeMap.age = 70;
+
+// By default, enums will initialize the first value to 0 and add 1 to each additional value
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+};
+let currentDirection = CardinalDirections.North; // 0
+console.log(currentDirection.North); // throw error Noth changed to 0
+
+enum CardinalDirections {
+  North = 1,
+  East,
+  South,
+  West
+};
+console.log(CardinalDirections.North); // logs 1
+console.log(CardinalDirections.East); // logs 2
+console.log(CardinalDirections.South); // logs 3
+console.log(CardinalDirections.West); // logs 4
+
+enum StatusCodes {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400
+};
+console.log(NotFound) // logs 404
+console.log(Success) // logs 200
+
+enum CardinalDirections {
+  North = 'North',
+  East = "East",
+  South = "South",
+  West = "West"
+};
+console.log(CardinalDirections.North);
+console.log(CardinalDirections.East);
