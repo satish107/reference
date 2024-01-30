@@ -1,0 +1,3 @@
+AUTH username password or AUTH password
+CONFIG get *
+CONFIG get requirepass

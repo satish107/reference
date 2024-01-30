@@ -12,6 +12,22 @@ curl -X DELETE "localhost:9200/document-index/_doc/1"
 curl --location --request DELETE 'https://elasticsearch.careers360.de/qna'
 # 2. Delete all documents from the index
 POST document-index/_delete_by_query?conflicts=proceed
+
+Q.1 Why Elasticsearch is So Fast?
+1.Inverted Index
+2.Distributed Architecture
+3.Sharding
+4.Doument Orient Structure
+5.Lucene search engine
+6.In-Memory Data Structure
+7.Caching Mechanism
+8.Aggregation Framework
+9.Cluster Co-ordination
+10.Rest-API
+
+
+
+
 {
  "query": {
  "match_all": {}
@@ -425,7 +441,85 @@ POST document-index/_delete_by_query?conflicts=proceed
 }
 
 
+# External
 
+{
+  "query": {
+    "match": {
+      "field_name": "field value"
+    }
+  }
+}
+
+{
+  "query": {
+    "term": {
+      "field_name": "term_value"
+    }
+  }
+}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"match": {"field_name1": "field_value 1"}},
+        {"range": {"field_name2": {"gte": 10, "lte": 20}}}
+      ],
+      "must_not": [
+        {"term": {"field_name": "value"}}
+      ],
+      "should": [
+        {"term": {"field_name": "value"}}
+      ]
+    }
+  }
+}
+
+{
+  "query": {
+    "range": {"field_name": {"gte": 10, "lte": 20}}
+  }
+}
+
+{
+  "query": {
+    "wildcard": {"field_name": "kjfdfd"}
+  }
+}
+
+{
+  "query": {
+    "match_phrase": {"field_name": "kjdfjhdf"}
+  }
+}
+
+{
+  "query": {
+    "nested": {
+      "path": "nested_field",
+      "query": {
+        "nested_field.field_name": "kdffj"
+      }
+    }
+  }
+}
+
+{
+  "query": {
+    "prefix": {
+      "field_name": "prefix*"
+    }
+  }
+}
+
+{
+  "query": {
+    "fuzzy": {
+      "field_name": {"value": "dfhjkfd", "fuzziness": 2}
+    }
+  }
+}
 
 
 

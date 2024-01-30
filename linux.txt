@@ -87,34 +87,6 @@ netstat -tulpn
 pip install -U supervisor
 pip freeze|grep supervisor
 
-my_api_key: 85f5c5094188cddab08141105b45fd9457a8213b3ecbe231
-
-prod_api_key: 86a7920611de9f81b7d047100516f49605ae763b39cde660
-
-<img src={require('@/images/default_web.png')} alt="demo.jpg" className="img-fluid liveclasse-img-web" />
-
-test_url = settings.BASE_URL+'classroom/%s/testprep/pre-test/?test_type=5&exam_grouping_id=%d&num_questions=%s&language=1' %(sellable_product_group.slug, obj.id, obj.num_questions)
-
-
-
-
-
-GA GTM
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T9ZMDMB');</script>
-<!-- End Google Tag Manager -->
-
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9ZMDMB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 python manage.py showmigrations
 python manage.py dbshell
 describe users_userprofile;
